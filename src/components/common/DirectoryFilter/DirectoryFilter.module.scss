@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+.filters {
+  width: 100%;
+  display: flex;
+}
+.filters > button {
+  flex: 1;
+  height: 2.5rem;
+  cursor: pointer;
+  border: 1px solid #302e2b;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+}
+
+.filters__filterOn {
+  background-color: #c8cbcb;
+  color: #01010f;
+}
+
+.filters__filterOff {
+  border: solid 1px #c8cbcb;
+  background-color: #0f0e1c;
+  color: #c8cbcb;
+}

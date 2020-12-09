@@ -1,6 +1,6 @@
 {
     "name": "mixin-ui",
-    "version": "v0.0.1",
+    "version": "0.0.0-semantically-released",
     "description": "",
     "main": "lib/index.js",
     "module": "lib/index.esm.js",
@@ -58,8 +58,12 @@
         "enzyme-adapter-react-16": "^1.15.5",
         "enzyme-to-json": "^3.6.1",
         "eslint": "^7.14.0",
+        "eslint-config-airbnb": "^18.2.1",
         "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
         "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-hooks": "^4.2.0",
         "husky": "^4.3.0",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^26.6.3",
@@ -77,5 +81,10 @@
         "react-dom": "^16.13.1",
         "prop-types": "^15.7.2",
         "styled-components": "^5.2.1"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     }
 }

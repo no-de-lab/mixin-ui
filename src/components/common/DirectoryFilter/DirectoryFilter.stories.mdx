@@ -1,0 +1,26 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import DirectoryFilter from './';
+
+<Meta title="Components/DirectoryFilter" component={DirectoryFilter} />
+
+# Test Component
+
+My test component, which show headet text and body
+
+## Props
+
+<Props of={DirectoryFilter} />
+
+## Basic usage
+
+<Preview>
+  <Story name="Basic">
+    <DirectoryFilter
+      filters={[
+        { title: 'Profile' },
+        { title: 'My outsourcing' },
+        { title: 'Setting' },
+      ]}
+    />
+  </Story>
+</Preview>
