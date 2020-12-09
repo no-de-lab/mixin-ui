@@ -1,4 +1,3 @@
-import { Test } from './components/Test/Test';
-import { Test2 } from './components/Test2/Test2';
+import Directory from './components/common/DirectoryFilter';
 
-export { Test, Test2 };
+export { Directory };
