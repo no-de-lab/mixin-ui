@@ -1,3 +1,40 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": { "chrome": "58", "ie": "11" },
+        "useBuiltIns": false
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": false,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false,
+        "version": "^7.12.10"
+      }
+    ],
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "pure": true,
+        "preprocess": false
+      }
+    ],
+    [
+      "@babel/plugin-proposal-optional-chaining",
+      {
+        "loose": true
+      }
+    ]
+  ]
 }
