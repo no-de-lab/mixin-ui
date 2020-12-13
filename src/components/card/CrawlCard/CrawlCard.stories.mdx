@@ -1,0 +1,104 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import CrawlCard from './';
+
+<Meta title="Components/Card/CrawlCard" component={CrawlCard} />
+
+# Crawl Card Component
+
+크롤링 카드 컴포넌트
+
+## Props
+
+<Props of={CrawlCard} />
+
+## Image Exist Content Exist usage
+
+이미지, 설명 둘다 있을 때 (기본)
+
+<Preview>
+  <Story name="Basic">
+    <CrawlCard
+      data={{
+        title: 'Title Title Title Title Title Title Title Title Title',
+        content:
+          'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+        hashtag: 'hashtag, hashtag, hashtag',
+        thumbnail: 'https://source.unsplash.com/random',
+        provider: 'VELOG',
+        url: '/',
+      }}
+      onBookmark={action('북마크 클릭 이벤트')}
+      onComment={action('댓글 클릭 이벤트')}
+      onShare={action('공유 클릭 이벤트')}
+    />
+  </Story>
+</Preview>
+
+## None Image Content Exist usage
+
+이미지 없을 때, 설명을 10줄까지 표시
+
+<Preview>
+  <Story name="No Image">
+    <CrawlCard
+      data={{
+        title: 'Title Title Title Title Title Title Title Title Title',
+        content:
+          'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+        hashtag: '',
+        thumbnail: '',
+        provider: 'DEVTO',
+        url: '/',
+      }}
+      onBookmark={action('북마크 클릭 이벤트')}
+      onComment={action('댓글 클릭 이벤트')}
+      onShare={action('공유 클릭 이벤트')}
+    />
+  </Story>
+</Preview>
+
+## None Content, Image Exist usage
+
+설명이 없을 때, 썸네일 꽉 채워서 보여줌
+
+<Preview>
+  <Story name="No Content">
+    <CrawlCard
+      data={{
+        title: 'Title Title Title Title Title Title Title Title Title',
+        content: '',
+        hashtag: 'hashtag, hashtag',
+        thumbnail: 'https://source.unsplash.com/random',
+        provider: 'VELOG',
+        url: '/',
+      }}
+      onBookmark={action('북마크 클릭 이벤트')}
+      onComment={action('댓글 클릭 이벤트')}
+      onShare={action('공유 클릭 이벤트')}
+    />
+  </Story>
+</Preview>
+
+## None Content, None Image usage
+
+설명과 이미지 둘 다 없을 때, 제목을 설명란에 채움 10줄까지 표시
+
+<Preview>
+  <Story name="No Content No Image">
+    <CrawlCard
+      data={{
+        title:
+          'Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title Title',
+        content: '',
+        hashtag: '',
+        thumbnail: '',
+        provider: 'DEVTO',
+        url: '/',
+      }}
+      onBookmark={action('북마크 클릭 이벤트')}
+      onComment={action('댓글 클릭 이벤트')}
+      onShare={action('공유 클릭 이벤트')}
+    />
+  </Story>
+</Preview>
