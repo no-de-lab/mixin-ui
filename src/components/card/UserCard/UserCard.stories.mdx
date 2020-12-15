@@ -1,0 +1,29 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import UserCard from './';
+
+<Meta title="Components/card/UserCard" component={UserCard} />
+
+# UserCard Component
+
+유저 프로필 카드 컴포넌트입니다.
+
+## Props
+
+<Props of={UserCard} />
+
+## Image Exist usage
+
+<Preview>
+  <Story name="Basic">
+    <UserCard />
+  </Story>
+</Preview>
+
+## No Image usage
+
+<Preview>
+  <Story name="No Image">
+    <UserCard />
+  </Story>
+</Preview>

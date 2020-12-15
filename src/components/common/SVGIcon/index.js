@@ -12,6 +12,8 @@ const getViewBox = (name) => {
     case 'twitter':
     case 'blog':
     case 'facebook':
+    case 'write':
+    case 'notify':
       return '0 0 24 24';
     case 'github':
       return '0 0 40 40';
@@ -25,6 +27,73 @@ const getViewBox = (name) => {
 const getPath = (name, props) => {
   const { focused } = props;
   switch (name) {
+    case 'notify':
+      return (
+        <>
+          <path fill="none" d="M0,0H24V24H0Z" />
+          <g transform="translate(19435 21294)">
+            <g
+              strokeMiterlimit="10"
+              fill="none"
+              transform="translate(-19431 -21291)"
+            >
+              <path stroke="none" d="M11.107.5H4.893L.5,4.41V15.5h15V4.41Z" />
+              <path
+                fill="#dcdcdc"
+                stroke="none"
+                d="M 5.273745536804199 1.5 L 1.499600410461426 4.858362197875977 L 1.499600410461426 14.5 L 14.49960136413574 14.5 L 14.49960136413574 4.858318328857422 L 10.72609710693359 1.5 L 5.273745536804199 1.5 M 4.893240928649902 0.5 L 11.10665130615234 0.5 L 15.49960136413574 4.409609794616699 L 15.49960136413574 15.5 L 0.4996004104614258 15.5 L 0.4996004104614258 4.409609794616699 L 4.893240928649902 0.5 Z"
+              />
+            </g>
+            <path
+              stroke="#dcdcdc"
+              fill="none"
+              d="M-19428.008-21272.6h18"
+              transform="translate(-3.994 -0.402)"
+            />
+            <path
+              stroke="#dcdcdc"
+              fill="none"
+              d="M-19422-21287.594v-2"
+              transform="translate(-1 -2.906)"
+            />
+            <path
+              stroke="#dcdcdc"
+              fill="none"
+              d="M-19423.486-21284.619l-1.584,1.563v4.061"
+              transform="translate(-1.93 -1.881)"
+            />
+          </g>
+        </>
+      );
+    case 'write':
+      return (
+        <>
+          <path fill="none" d="M12,0A12,12,0,1,1,0,12,12,12,0,0,1,12,0Z" />
+          <path
+            fill="#dcdcdc"
+            stroke="#dcdcdc"
+            strokeMiterlimit="10"
+            d="M14.642.5H6.358L.5,6.358v8.285L6.358,20.5h8.285L20.5,14.643V6.358Z"
+            transform="translate(1.5 1.5)"
+          />
+          <g transform="translate(-1268.914 28775.346) rotate(45)">
+            <g fill="none" transform="translate(-19437 -21246)">
+              <path d="M0,0H10V3H0Z" />
+              <path
+                stroke="none"
+                fill="#191919"
+                d="M 1 1 L 1 2 L 9 2 L 9 1 L 1 1 M 0 0 L 10 0 L 10 3 L 0 3 L 0 0 Z"
+              />
+            </g>
+            <path
+              fill="#191919"
+              stroke="none"
+              d="M1.5,0,3,3H0Z"
+              transform="translate(-19440 -21243) rotate(-90)"
+            />
+          </g>
+        </>
+      );
     case 'avatar':
       return (
         <>

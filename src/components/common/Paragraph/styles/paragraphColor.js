@@ -5,9 +5,8 @@ const colorBreakPoints = {
   gray: `
         color: #616161;
     `,
-
   dark: `
-        color: black;;
+        color: black;
     `,
 };
 

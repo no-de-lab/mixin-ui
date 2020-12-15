@@ -1,0 +1,30 @@
+import { Meta, DocsContainer, Typeset } from '@storybook/addon-docs/blocks';
+import palette from './palette';
+
+<Meta
+  title="Docs/Typograph"
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <div style={{ border: '3px solid black', padding: '3rem 2rem' }}>
+            {children}
+          </div>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Description
+
+`폰트`에 대한 설명입니다.
+
+<br />
+
+## Text Size
+
+**Font**: Inter
+**Weight**: 900
+
+<Typeset fontFamily="Inter" fontSizes={[10, 20, 30]} fontWeight={900} />

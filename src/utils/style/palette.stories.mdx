@@ -1,0 +1,40 @@
+import {
+  Meta,
+  DocsContainer,
+  ColorPalette,
+  ColorItem,
+} from '@storybook/addon-docs/blocks';
+import palette from './palette';
+
+<Meta
+  title="Docs/Palette"
+  parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <div style={{ border: '3px solid black', padding: '3rem 2rem' }}>
+            {children}
+          </div>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Description
+
+`색상`에 대한 설명입니다.
+
+<br />
+
+## Theme Palette
+
+<ColorPalette>
+  {Object.keys(palette).map((color) => (
+    <ColorItem
+      title={`${color}`}
+      subtitle="palette"
+      colors={[palette[color]]}
+    />
+  ))}
+</ColorPalette>

@@ -32,9 +32,7 @@ import React, { Component } from 'react';
 
 import { Button } from 'mixin-ui';
 
-export default function Example {
-  return (
-    <Button>Hello, world!</Button>
-  )
+export default function Example() {
+  return <Button>Hello, world!</Button>;
 }
 ```
