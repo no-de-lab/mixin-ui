@@ -1,0 +1,84 @@
+import {
+  Meta,
+  Story,
+  Description,
+  Preview,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import UserBadge from './';
+import UserBadgeGroup from './UserBadgeGroup';
+
+<Meta title="Components/Badge/UserBadgeGroup" component={UserBadgeGroup} />
+
+# User Badge Component
+
+유저 등급을 나타내는 뱃지입니다.
+
+<Description>White : 초기 등급 (default)</Description>
+<Description>Green : 질문 1개 이상, 댓글(답글) 5회 이상</Description>
+<Description>Blue : 질문 5개 이상, 댓글(답글) 10회 이상</Description>
+<Description>Red : 질문 15개 이상, 댓글(답글) 20회 이상</Description>
+<Description>Gold : Gold 질문 30개 이상, 댓글(답글) 50회 이상</Description>
+
+## Props
+
+<Props of={UserBadge} />
+
+## Preview
+
+<Preview>
+  <Story name="UserBadgeGroup">
+    <UserBadgeGroup />
+  </Story>
+</Preview>
+
+## White usage
+
+<Preview>
+  <Story name="White">
+    <UserBadge grade="white" onClick={action('클릭 이벤트')}>
+      WHITE
+    </UserBadge>
+  </Story>
+</Preview>
+
+## Green usage
+
+<Preview>
+  <Story name="Green">
+    <UserBadge grade="green" onClick={action('클릭 이벤트')}>
+      GREEN
+    </UserBadge>
+  </Story>
+</Preview>
+
+## Blue usage
+
+<Preview>
+  <Story name="Blue">
+    <UserBadge grade="blue" onClick={action('클릭 이벤트')}>
+      BLUE
+    </UserBadge>
+  </Story>
+</Preview>
+
+## Red usage
+
+<Preview>
+  <Story name="Red">
+    <UserBadge grade="red" onClick={action('클릭 이벤트')}>
+      RED
+    </UserBadge>
+  </Story>
+</Preview>
+
+## Gold usage
+
+<Preview>
+  <Story name="Gold">
+    <UserBadge grade="gold" onClick={action('클릭 이벤트')}>
+      GOLD
+    </UserBadge>
+  </Story>
+</Preview>

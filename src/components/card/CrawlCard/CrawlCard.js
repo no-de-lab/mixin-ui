@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import S from './styles/crawlCard.style';
 import Paragraph from '../../common/Paragraph';
 import SVGIcon from '../../common/SVGIcon';
+import BookmarkIcon from '../../common/SVGIcon/BookmarkIcon';
 
 export default function CrawlCard({ children, ...props }) {
   return <S.Container {...props}>{children}</S.Container>;
@@ -106,9 +107,7 @@ CrawlCard.Toolbar = function CrawlCardToolbar({
         <div className="share_wrap" onClick={onShare}>
           <SVGIcon name="share" w="24px" h="24px" url={url} />
         </div>
-        <div className="bookmark_wrap" onClick={onBookmark}>
-          <SVGIcon name="bookmark" w="24px" h="24px" />
-        </div>
+        <BookmarkIcon name="bookmark" w="24px" h="24px" onClick={onBookmark} />
       </S.Toolbar.Icon>
     </S.Toolbar>
   );

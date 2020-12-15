@@ -1,3 +1,5 @@
+// see : https://stackoverflow.com/questions/59900538/shared-component-library-best-practices
+
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import path from 'path';
@@ -22,7 +24,7 @@ export default {
       sourcemapPathTransform: (relativePath) => {
         return path.relative('src', relativePath);
       },
-      format: 'cjs',
+      format: 'cjs', // nextjs not suppot esm
       sourcemap: false,
     },
   ],
@@ -44,7 +46,9 @@ export default {
       browser: true,
     }),
 
-    commonjs(),
+    commonjs({
+      include: /node_modules/,
+    }),
     sass({
       insert: true,
     }),

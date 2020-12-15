@@ -35,13 +35,15 @@ export default function CrawlCardLayout({
       <CrawlCard.Body>
         <a href={url} rel="noopener noreferrer" target="_blank">
           <CrawlCard.Title>{title}</CrawlCard.Title>
-          <CrawlCard.Category
-            category={
-              data?.hashtag?.length > 0
-                ? hashtag.split(',').map((tag) => `#${tag} `)
-                : []
-            }
-          />
+        </a>
+        <CrawlCard.Category
+          category={
+            data?.hashtag?.length > 0
+              ? hashtag.split(',').map((tag) => `#${tag} `)
+              : []
+          }
+        />
+        <a href={url} rel="noopener noreferrer" target="_blank">
           <CrawlCard.Text line={thumbnail ? 2 : 10}>
             {content || (!thumbnail && title)}
           </CrawlCard.Text>

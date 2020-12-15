@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 const getViewBox = (name) => {
   // add new svg icon
   switch (name) {
+    case 'white_badge':
+      return '0 0 40 16';
     case 'comment':
     case 'share':
     case 'bookmark':
@@ -16,6 +18,24 @@ const getViewBox = (name) => {
 const getPath = (name, props) => {
   const { focused } = props;
   switch (name) {
+    case 'white_badge': {
+      return (
+        <>
+          <rect fill="#131313" width="40" height="16" rx="1" />
+          <text
+            fill="#8e8e8e"
+            fontSize="10px"
+            fontFamily="BlenderPro-Book, Blender Pro;"
+            letterSpacing="0.08em"
+            transform="translate(20 11)"
+          >
+            <tspan x="-17" y="0.8">
+              WHITE
+            </tspan>
+          </text>
+        </>
+      );
+    }
     case 'comment':
       if (focused) {
         return (
@@ -101,20 +121,14 @@ const getPath = (name, props) => {
       if (focused) {
         return (
           <>
-            <path id="패스_438" data-name="패스 438" d="M0,0H22V22H0Z" />
-            <g transform="translate(-1.221 -1.221)">
+            <path fill="none" d="M0,0H22V22H0Z" />
+            <g fill="#aa00ff" transform="translate(5 3)">
+              <path stroke="none" d="M0,0H12.5V16.5L6.362,10.616,0,16.5Z" />
               <path
-                className="cls-2"
-                d="M7.08,0,0,7.08"
-                transform="translate(8.46 8.46)"
-              />
-              <path
-                className="cls-3"
-                d="M16.95,14.12l2.83-2.83V7.05L16.95,4.22H12.71L9.88,7.05"
-              />
-              <path
-                className="cls-3"
-                d="M14.12,16.95l-2.83,2.83H7.05L4.22,16.95V12.71L7.05,9.88"
+                className="bookmark"
+                fill="#aa00ff"
+                stroke="none"
+                d="M 1 1 L 1 14.21286582946777 L 5.682590007781982 9.88169002532959 L 6.373849868774414 9.242300033569336 L 7.053609848022461 9.893909454345703 L 11.5 14.15616798400879 L 11.5 1 L 1 1 M 0 0 L 12.5 0 L 12.5 16.5 L 6.361609935760498 10.61581039428711 L 0 16.5 L 0 0 Z"
               />
             </g>
           </>

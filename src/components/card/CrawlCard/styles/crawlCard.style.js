@@ -47,6 +47,15 @@ S.Title = styled.div`
 `;
 
 S.Category = styled.div`
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   padding: 0.5rem 0;
   height: 2.5rem;
 `;
