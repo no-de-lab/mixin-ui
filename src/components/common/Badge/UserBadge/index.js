@@ -27,7 +27,7 @@ const S = {};
 S.Wrap = styled.div`
   width: 2.5rem;
   height: 1rem;
-  background: #131313;
+  background: black;
   font-size: 0.625rem;
   display: flex;
   justify-content: center;

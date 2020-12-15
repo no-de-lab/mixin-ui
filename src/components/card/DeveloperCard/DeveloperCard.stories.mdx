@@ -1,0 +1,50 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import DeveloperCard from './';
+
+<Meta title="Components/card/DeveloperCard" component={DeveloperCard} />
+
+# DeveloperCard Component
+
+개발자 프로필 카드 컴포넌트입니다.
+
+## Props
+
+<Props of={DeveloperCard} />
+
+## Image Exist usage
+
+<Preview>
+  <Story name="Basic">
+    <DeveloperCard
+      onClick={action('프로필 페이지 이동')}
+      onBookmark={action('북마크 이벤트 발생')}
+      data={{
+        title: 'Title',
+        content:
+          'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+        hashtag: '#hashtag',
+        provider: 'Text',
+        url: '/',
+        imgUrl: 'https://source.unsplash.com/random',
+        SocialUrl: [
+          {
+            type: 'BLOG',
+            url: '',
+          },
+        ],
+      }}
+    />
+  </Story>
+</Preview>
+
+## No Image usage
+
+<Preview>
+  <Story name="No Image">
+    <DeveloperCard
+      onClick={action('프로필 페이지 이동')}
+      onBookmark={action('북마크 이벤트 발생')}
+    />
+  </Story>
+</Preview>

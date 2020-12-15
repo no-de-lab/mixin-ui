@@ -1,10 +1,11 @@
 const sizeBreakPoints = {
   small: `
-            font-size: 0.875rem;
+            line-height:1.54;
+            font-size: 0.8125rem;
       `,
   medium: `
             line-height:1.54;
-            font-size: 0.8125rem;
+            font-size: 0.9375rem;
       `,
   large: `
             line-height:1.53;

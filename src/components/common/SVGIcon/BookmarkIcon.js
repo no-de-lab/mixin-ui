@@ -36,6 +36,7 @@ const S = {};
 S.BookmarkIconWrap = styled.div`
   width: 24px;
   height: 24px;
+  cursor: pointer;
   &:hover .bookmark {
     fill: #df78ef;
   }

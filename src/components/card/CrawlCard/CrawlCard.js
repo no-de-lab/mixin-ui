@@ -28,7 +28,7 @@ CrawlCard.Text = function CrawlCardText({ children, line, ...props }) {
     <>
       {children && (
         <S.Text>
-          <Paragraph size="medium" line={line} color="gray" {...props}>
+          <Paragraph size="small" line={line} color="gray" {...props}>
             {children}
           </Paragraph>
         </S.Text>
