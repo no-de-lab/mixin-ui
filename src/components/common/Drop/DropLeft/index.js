@@ -1,41 +1,38 @@
-import React, { useCallback, useEffect } from 'react';
-import styled from 'styled-components';
-import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
-import { Document } from '../../../../utils/constant';
+import React, { useCallback, useEffect } from "react";
+import styled from "styled-components";
+import { createPortal } from "react-dom";
+import PropTypes from "prop-types";
 
 export default function DropLeft({ render, setVisible, visible }) {
   // Nav바에서 조작 가능하게 하기 위해 toggleFilter props 사용
   const toggle = useCallback(() => {
-    setVisible(!visible);
+    setVisible(false);
   }, [visible]);
 
   const noneEvent = useCallback((e) => e.stopPropagation(), []);
 
   const escapeKey = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       toggle();
     }
   };
 
   useEffect(() => {
-    if (visible) window.addEventListener('keydown', escapeKey);
-    else if (!visible) window.removeEventListener('keydown', escapeKey);
+    if (visible) window.addEventListener("keydown", escapeKey);
+    else if (!visible) window.removeEventListener("keydown", escapeKey);
     return () => {
-      window.removeEventListener('keydown', escapeKey);
+      window.removeEventListener("keydown", escapeKey);
     };
   }, [visible]);
 
-  return visible
-    ? createPortal(
-        <S.Overlay onClick={toggle}>
-          <S.Wrap visible={visible} onClick={noneEvent}>
-            {render}
-          </S.Wrap>
-        </S.Overlay>,
-        Document.body,
-      )
-    : null;
+  return createPortal(
+    <S.Overlay onClick={toggle} visible={visible}>
+      <S.Wrap visible={visible} onClick={noneEvent}>
+        {render}
+      </S.Wrap>
+    </S.Overlay>,
+    document.body
+  );
 }
 
 DropLeft.defaultProps = {
@@ -63,8 +60,8 @@ S.Wrap = styled.div`
   box-shadow: 0 0 18px 0 rgba(200, 203, 203, 0.4);
   background-color: #070714;
   color: #c8cbcb;
-  transition: 0.3s ease-in-out;
-  right: ${(props) => (props.visible ? '0rem' : '-28.125rem')};
+  transition: all 0.3s ease-in-out;
+  right: ${(props) => (props.visible ? "0rem" : "-32.125rem")};
 `;
 
 S.Overlay = styled.div`
@@ -72,6 +69,6 @@ S.Overlay = styled.div`
   top: 0;
   left: 0;
   z-index: 1040;
-  width: 100vw;
+  width: ${(props) => (props.visible ? "100vw" : "0rem")};
   height: 100vh;
 `;
