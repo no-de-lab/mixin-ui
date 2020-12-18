@@ -17,6 +17,8 @@ const getViewBox = (name) => {
       return '0 0 24 24';
     case 'github':
       return '0 0 40 40';
+    case 'search':
+      return '0 0 52 52';
     case 'avatar':
       return '0 0 60 60';
     default:
@@ -27,6 +29,26 @@ const getViewBox = (name) => {
 const getPath = (name, props) => {
   const { focused } = props;
   switch (name) {
+    case 'search':
+      return (
+        <>
+          <path fill="none" d="M0,0H52V52H0Z" />
+          <g transform="translate(4.918 21.984) rotate(-45)">
+            <path
+              fill="#fff"
+              stroke="#dcdcdc"
+              d="M0,0V12.834"
+              transform="translate(12.834 25.666)"
+            />
+            <path
+              stroke="#dcdcdc"
+              strokeMiterlimit="10"
+              fill="none"
+              d="M7.514,0,0,7.514v10.64l7.514,7.514h10.64l7.514-7.514V7.514L18.154,0Z"
+            />
+          </g>
+        </>
+      );
     case 'notify':
       return (
         <>

@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect } from "react";
-import styled from "styled-components";
-import { createPortal } from "react-dom";
-import PropTypes from "prop-types";
+import React, { useCallback, useEffect } from 'react';
+import styled from 'styled-components';
+import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
+import { Document } from '../../../../utils/constant';
 
 export default function DropLeft({ render, setVisible, visible }) {
   // Nav바에서 조작 가능하게 하기 위해 toggleFilter props 사용
@@ -12,16 +13,16 @@ export default function DropLeft({ render, setVisible, visible }) {
   const noneEvent = useCallback((e) => e.stopPropagation(), []);
 
   const escapeKey = (e) => {
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       toggle();
     }
   };
 
   useEffect(() => {
-    if (visible) window.addEventListener("keydown", escapeKey);
-    else if (!visible) window.removeEventListener("keydown", escapeKey);
+    if (visible) window.addEventListener('keydown', escapeKey);
+    else if (!visible) window.removeEventListener('keydown', escapeKey);
     return () => {
-      window.removeEventListener("keydown", escapeKey);
+      window.removeEventListener('keydown', escapeKey);
     };
   }, [visible]);
 
@@ -31,7 +32,7 @@ export default function DropLeft({ render, setVisible, visible }) {
         {render}
       </S.Wrap>
     </S.Overlay>,
-    document.body
+    Document.body,
   );
 }
 
@@ -61,7 +62,7 @@ S.Wrap = styled.div`
   background-color: #070714;
   color: #c8cbcb;
   transition: all 0.3s ease-in-out;
-  right: ${(props) => (props.visible ? "0rem" : "-32.125rem")};
+  right: ${(props) => (props.visible ? '0rem' : '-32.125rem')};
 `;
 
 S.Overlay = styled.div`
@@ -69,6 +70,6 @@ S.Overlay = styled.div`
   top: 0;
   left: 0;
   z-index: 1040;
-  width: ${(props) => (props.visible ? "100vw" : "0rem")};
+  width: ${(props) => (props.visible ? '100vw' : '0rem')};
   height: 100vh;
 `;

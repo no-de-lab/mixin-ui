@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css as styledCss } from 'styled-components';
 import { createPortal } from 'react-dom';
 import css from '../../../utils/style/css';
 import { Document } from '../../../utils/constant';
 
-export default function Modal({ visible, setVisible, render }) {
+export default function Modal({ visible, setVisible, render, full }) {
   const toggle = useCallback(() => {
     setVisible(!visible);
   }, [visible]);
@@ -31,7 +31,9 @@ export default function Modal({ visible, setVisible, render }) {
         <>
           <S.Overlay />
           <S.Container onClick={toggle}>
-            <S.Wrap onClick={noneEvent}>{render}</S.Wrap>
+            <S.Wrap onClick={noneEvent} full={full}>
+              {render}
+            </S.Wrap>
           </S.Container>
         </>,
         Document.body,
@@ -42,12 +44,14 @@ export default function Modal({ visible, setVisible, render }) {
 Modal.defaultProps = {
   setVisible: () => {},
   render: <div>Render</div>,
+  full: false,
 };
 
 Modal.propTypes = {
   setVisible: PropTypes.func,
   visible: PropTypes.bool.isRequired,
   render: PropTypes.node,
+  full: PropTypes.bool,
 };
 
 const S = {};
@@ -84,6 +88,17 @@ S.Wrap = styled.div`
   box-shadow: 0 0 24px 0 rgba(137, 123, 111, 0.25);
   border: solid 1px #413d39;
   background-color: #0f0f10;
+
+  ${(props) =>
+    props.full &&
+    styledCss`
+      width: 100%;
+      height: 100%;
+   `};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${css.media('mobile')`
     width: 100%;
     height: 100%;`}
